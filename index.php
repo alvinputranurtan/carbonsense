@@ -13,7 +13,7 @@ if (!isset($_SESSION['user_id'])) {
 $currentPage = $_GET['page'] ?? 'dashboard';
 
 // whitelist halaman yang diijinkan
-$allowedPages = ['dashboard', 'analytics', 'reports', 'settings', 'profile'];
+$allowedPages = ['dashboard', 'analytics', 'billing', 'alerts', 'nodes', 'profile'];
 
 if (!in_array($currentPage, $allowedPages, true)) {
     $currentPage = 'dashboard';
@@ -81,6 +81,35 @@ if ($baseUrl === '/' || $baseUrl === '\\') {
       'GRAD' 0,
       'opsz' 24;
   }
+
+/* Scrollbar Style - CarbonSense Themed */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f1f22; /* hampir sama dengan background utama */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #244649; /* warna seperti di tombol "Mingguan" */
+  border-radius: 8px;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2c5a5f; /* sedikit lebih terang saat hover */
+  box-shadow: 0 0 6px #2c5a5f80;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #244649 #0f1f22;
+}
+
+
   </style>
 </head>
 

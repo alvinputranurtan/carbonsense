@@ -101,11 +101,7 @@ $conn->close();
     </div>
 
     <div class="flex items-center gap-4">
-      <button class="relative p-2 rounded-full hover:bg-white/10">
-        <span class="material-symbols-outlined text-white">notifications</span>
-        <span class="absolute top-1 right-1 block h-2 w-2 rounded-full bg-red-500"></span>
-      </button>
-      <div class="w-px h-6 bg-[#325e67]"></div>
+  
       <div class="flex items-center gap-3">
         <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
           style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB6X0_wHDenPCn4sA39nLyQ1yEHQRU3jDF78q4Hy198ipRAacYWv_7jD7Mw31QQM1RZcgTQaq4ytcvNxfgSID4BHaZo6ZN-u7po_1NGin7G0Ye_5TmpPRW6uC4ANzZ4oFGOCeHaLQsnuMu80RuGiqkSpy3NdMGcTj5rt1YP9IcqKhF9mv5x8aO2hWVVky5fTCmDJXI2cEfGmg2zRl51he7pB0hRn63Qu4PHvAyJW-F9hYfqWyXnm9vP7kHEot4ApPjbdzncWhz_QeN7");'></div>
@@ -153,7 +149,8 @@ $conn->close();
           </p>
         </div>
       </div>
-      <a class="text-sm font-bold tracking-[0.015em] flex gap-2 text-white items-center hover:text-primary" href="#">
+      <a class="text-sm font-bold tracking-[0.015em] flex gap-2 text-white items-center hover:text-primary"
+        href="<?php echo $baseUrl; ?>/index.php?page=alerts">
         View All Alerts
         <span class="material-symbols-outlined text-lg">arrow_forward</span>
       </a>
@@ -282,7 +279,7 @@ $coColor = $coDelta >= 0 ? '#0bda54' : '#fa5f38';
       <h3 class="text-white text-base font-medium">Status Laporan &amp; Peringatan</h3>
       <div class="flex flex-col gap-4">
         <div class="flex justify-between items-center">
-          <p class="text-white">Status VOC</p>
+          <p class="text-white">Status AQI</p>
           <span class="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium <?php echo $vocClass; ?>">
             <?php echo htmlspecialchars($vocLabel); ?>
           </span>

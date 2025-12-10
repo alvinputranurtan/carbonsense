@@ -1,21 +1,24 @@
 <?php
 // helper untuk membuat 1 item menu sidebar
-function sidebar_item($id, $label, $icon, $currentPage, $baseUrl)
-{
-    $isActive = ($currentPage === $id);
+if (!function_exists('sidebar_item')) {
+    function sidebar_item($id, $label, $icon, $currentPage, $baseUrl)
+    {
+        $isActive = ($currentPage === $id);
 
-    $baseClasses = 'flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium leading-normal';
-    $activeClasses = $isActive ? ' bg-[#234248] text-white' : ' hover:bg-white/10 text-white';
+        $baseClasses = 'flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium leading-normal';
+        $activeClasses = $isActive ? ' bg-[#234248] text-white'
+                                   : ' hover:bg-white/10 text-white';
 
-    $href = $baseUrl.'/index.php?page='.$id;
-    $fillStyle = $isActive ? "font-variation-settings: 'FILL' 1;" : '';
+        $href = $baseUrl.'/index.php?page='.$id;
+        $fillStyle = $isActive ? "font-variation-settings: 'FILL' 1;" : '';
 
-    echo '<a class="'.$baseClasses.$activeClasses.'" href="'.htmlspecialchars($href).'">';
-    echo '  <span class="material-symbols-outlined" style="'.$fillStyle.'">';
-    echo htmlspecialchars($icon);
-    echo '  </span>';
-    echo '  <p>'.htmlspecialchars($label).'</p>';
-    echo '</a>';
+        echo '<a class="'.$baseClasses.$activeClasses.'" href="'.htmlspecialchars($href).'">';
+        echo '  <span class="material-symbols-outlined" style="'.$fillStyle.'">';
+        echo htmlspecialchars($icon);
+        echo '  </span>';
+        echo '  <p>'.htmlspecialchars($label).'</p>';
+        echo '</a>';
+    }
 }
 ?>
 
@@ -42,8 +45,8 @@ function sidebar_item($id, $label, $icon, $currentPage, $baseUrl)
       <?php
         sidebar_item('dashboard', 'Dashboard', 'dashboard', $currentPage, $baseUrl);
 sidebar_item('analytics', 'Analytics', 'analytics', $currentPage, $baseUrl);
-sidebar_item('reports', 'Reports', 'assessment', $currentPage, $baseUrl);
-sidebar_item('settings', 'Settings', 'settings', $currentPage, $baseUrl);
+sidebar_item('billing', 'Billing', 'credit_card', $currentPage, $baseUrl);
+sidebar_item('nodes', 'Nodes', 'sensors', $currentPage, $baseUrl);
 ?>
     </nav>
   </div>
