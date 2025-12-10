@@ -100,17 +100,26 @@ $conn->close();
       </div>
     </div>
 
-    <div class="flex items-center gap-4">
-  
-      <div class="flex items-center gap-3">
-        <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
-          style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB6X0_wHDenPCn4sA39nLyQ1yEHQRU3jDF78q4Hy198ipRAacYWv_7jD7Mw31QQM1RZcgTQaq4ytcvNxfgSID4BHaZo6ZN-u7po_1NGin7G0Ye_5TmpPRW6uC4ANzZ4oFGOCeHaLQsnuMu80RuGiqkSpy3NdMGcTj5rt1YP9IcqKhF9mv5x8aO2hWVVky5fTCmDJXI2cEfGmg2zRl51he7pB0hRn63Qu4PHvAyJW-F9hYfqWyXnm9vP7kHEot4ApPjbdzncWhz_QeN7");'></div>
-        <div class="flex flex-col text-sm">
-          <p class="text-white font-medium">Jane Doe</p>
-          <p class="text-[#92c0c9]">Admin</p>
-        </div>
-      </div>
+<div class="flex items-center gap-4">
+  <?php
+    // ambil dari session (fallback kalau kosong)
+    $displayName = $_SESSION['user_name'] ?? 'User';
+$displaySub = $_SESSION['user_role']
+            ?? ($_SESSION['user_email'] ?? 'Pengguna');
+?>
+  <div class="flex items-center gap-3">
+    <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+      style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB6X0_wHDenPCn4sA39nLyQ1yEHQRU3jDF78q4Hy198ipRAacYWv_7jD7Mw31QQM1RZcgTQaq4ytcvNxfgSID4BHaZo6ZN-u7po_1NGin7G0Ye_5TmpPRW6uC4ANzZ4oFGOCeHaLQsnuMu80RuGiqkSpy3NdMGcTj5rt1YP9IcqKhF9mv5x8aO2hWVVky5fTCmDJXI2cEfGmg2zRl51he7pB0hRn63Qu4PHvAyJW-F9hYfqWyXnm9vP7kHEot4ApPjbdzncWhz_QeN7");'></div>
+    <div class="flex flex-col text-sm">
+      <p class="text-white font-medium">
+        <?php echo htmlspecialchars($displayName); ?>
+      </p>
+      <p class="text-[#92c0c9]">
+        <?php echo htmlspecialchars($displaySub); ?>
+      </p>
     </div>
+  </div>
+</div>
   </div>
 
   <!-- Overall Status -->
@@ -119,13 +128,13 @@ $conn->close();
       <div class="flex items-center gap-4">
         <div class="flex items-center justify-center size-12 rounded-full 
           <?php
-            if ($overall === 'DANGER') {
-                echo 'bg-red-500/20';
-            } elseif ($overall === 'WARNING') {
-                echo 'bg-yellow-500/20';
-            } else {
-                echo 'bg-green-500/20';
-            }
+          if ($overall === 'DANGER') {
+              echo 'bg-red-500/20';
+          } elseif ($overall === 'WARNING') {
+              echo 'bg-yellow-500/20';
+          } else {
+              echo 'bg-green-500/20';
+          }
 ?>">
           <span class="material-symbols-outlined text-3xl
             <?php
