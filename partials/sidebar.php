@@ -31,6 +31,7 @@ if (!function_exists('sidebar_item')) {
   class="w-64 flex-shrink-0 bg-[#111f22] p-4 flex flex-col justify-between
          fixed inset-y-0 left-0 z-40 transform -translate-x-full
          md:static md:translate-x-0 transition-transform duration-200">
+
   <div class="flex flex-col gap-8">
     <div class="flex gap-3 items-center px-3">
       <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
