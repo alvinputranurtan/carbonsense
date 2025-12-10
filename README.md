@@ -1,21 +1,34 @@
-# Carbonsense
+# 🌍 Carbonsense
 
-A web-based IoT dashboard for monitoring environmental sensor data (temperature, pH, EC, and PPM).
+**Carbonsense** adalah sistem **IoT berbasis web** untuk pemantauan kualitas udara dan emisi karbon dari cerobong asap industri.  
+Platform ini juga mendukung konsep **Carbon Pay**, yaitu perhitungan kompensasi berdasarkan jumlah emisi yang dikeluarkan.
 
-## 🚀 Features
-- Real-time data upload from ESP32 via JSON
-- RESTful API built in PHP
-- Data visualization and analytics dashboard
-- Authentication system
-- Environment configuration with `.env` and `vlucas/phpdotenv`
+## 🔎 Fitur Utama
+- 🌫 **Air Quality Monitoring** — memantau indeks kualitas udara (AQI)
+- 💨 **Gas Leak Detection** — mendeteksi kebocoran gas secara real-time
+- 🧪 **CO Level Measurement** — pengukuran konsentrasi gas karbon monoksida (ppm)
+- 📈 **Carbon Pay System** — menghitung biaya karbon berdasarkan kadar CO & emisi
+- 📊 **Dashboard Analytics** — visualisasi data tren dan laporan otomatis
+- 🔐 **User Authentication** — akses aman untuk admin & operator
+- ⚙️ **.env Configuration** — konfigurasi environment terpisah menggunakan `vlucas/phpdotenv`
 
-## ⚙️ Requirements
-- PHP >= 8.0
-- MySQL / MariaDB
-- Composer
-- XAMPP / Apache server
+## 🧩 Teknologi yang Digunakan
+- **Backend:** PHP Native + REST API  
+- **Database:** MySQL (MariaDB)  
+- **Frontend:** HTML, CSS, JavaScript  
+- **Dependency Management:** Composer  
+- **Deployment:** XAMPP / Apache Server  
 
-## 📦 Installation
-1. Clone this repository:
+## 🧠 Parameter yang Dipantau
+| Parameter | Satuan | Deskripsi |
+|------------|---------|------------|
+| **Air Quality Index (AQI)** | - | Indeks kualitas udara berdasarkan gas polutan |
+| **Gas Leak Index** | % | Indikator kebocoran gas mudah terbakar |
+| **CO Level** | ppm | Konsentrasi gas karbon monoksida |
+| **Emission Rate** | mg/m³ | Tingkat emisi dari cerobong |
+| **Carbon Pay Value** | Rp | Estimasi biaya kompensasi karbon |
+
+## ⚙️ Instalasi
+1. Clone repository:
    ```bash
    git clone https://github.com/alvinputranurtan/carbonsense.git
