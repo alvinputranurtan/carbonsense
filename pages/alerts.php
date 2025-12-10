@@ -142,11 +142,11 @@ while ($row = $res->fetch_assoc()) {
 $totalAlerts = count($alerts);
 $stmt->close();
 ?>
-<div class="flex min-h-screen">
+<div class="flex h-full">
 
 
   <!-- MAIN -->
-  <main class="flex-1 p-6 lg:p-8">
+  <main class="flex-1 p-6 lg:p-8 overflow-y-auto">
     <div class="w-full max-w-6xl mx-auto flex flex-col gap-6">
       <!-- header -->
       <div class="flex flex-wrap justify-between items-center gap-4">

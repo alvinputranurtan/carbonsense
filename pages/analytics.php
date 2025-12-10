@@ -5,10 +5,10 @@ require_once __DIR__.'/../api/config.php';
 $currentPage = $currentPage ?? 'analytics';
 $baseUrl = $baseUrl ?? '';
 ?>
-<div class="flex min-h-screen">
+<div class="flex h-full">
 
   <!-- MAIN -->
-  <main class="flex-1 p-6 lg:p-8">
+  <main class="flex-1 p-6 lg:p-8 overflow-y-auto">
     <div class="w-full max-w-7xl mx-auto flex flex-col gap-6">
       <!-- Header + timeframe -->
       <div class="flex flex-wrap justify-between items-center gap-4">

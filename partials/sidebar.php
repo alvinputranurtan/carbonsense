@@ -6,8 +6,7 @@ if (!function_exists('sidebar_item')) {
         $isActive = ($currentPage === $id);
 
         $baseClasses = 'flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium leading-normal';
-        $activeClasses = $isActive ? ' bg-[#234248] text-white'
-                                   : ' hover:bg-white/10 text-white';
+        $activeClasses = $isActive ? ' bg-[#234248] text-white' : ' hover:bg-white/10 text-white/80';
 
         $href = $baseUrl.'/index.php?page='.$id;
         $fillStyle = $isActive ? "font-variation-settings: 'FILL' 1;" : '';
@@ -28,12 +27,15 @@ if (!function_exists('sidebar_item')) {
      onclick="toggleSidebar()"></div>
 
 <aside id="sidebar"
-  class="w-64 flex-shrink-0 bg-[#111f22] p-4 flex flex-col justify-between
+  class="w-64 bg-[#111f22] text-white flex flex-col justify-between
          fixed inset-y-0 left-0 z-40 transform -translate-x-full
-         md:static md:translate-x-0 transition-transform duration-200">
+         md:static md:translate-x-0
+         h-full md:h-auto
+         transition-transform duration-200">
 
-  <div class="flex flex-col gap-8">
-    <div class="flex gap-3 items-center px-3">
+  <!-- TOP: logo + nav -->
+  <div class="flex flex-col gap-8 p-4">
+    <div class="flex gap-3 items-center px-1">
       <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
         style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBm4UEHp4eUnls75HnD1qLEqHJzZtYmsDOuTz0EiAIFHITx3G5cYeYFLFwJPi_uDfqhYnPR9cTIisRBe9stIPsWmVnZ1lXOtcIVoE2CwMhJ06yXXkqeivlX9ddTqzY4oC6vRxLFOKxVGrpcFMaaznnCbYT43OGGBclLL3Q5z5r-QY-DVoWGY4kqpodSH45w4iiE2-GSAiiTahA7Ddr9b6JhsetEx69kkkREnt_aO5r7sDpMa6cKzfmZ89D4dCg6s2p42a81e1AcAhBr");'></div>
       <div class="flex flex-col">
@@ -46,19 +48,21 @@ if (!function_exists('sidebar_item')) {
       <?php
         sidebar_item('dashboard', 'Dashboard', 'dashboard', $currentPage, $baseUrl);
 sidebar_item('analytics', 'Analytics', 'analytics', $currentPage, $baseUrl);
-sidebar_item('billing', 'Billing', 'credit_card', $currentPage, $baseUrl);
+sidebar_item('billing', 'Billing', 'account_balance_wallet', $currentPage, $baseUrl);
 sidebar_item('nodes', 'Nodes', 'sensors', $currentPage, $baseUrl);
+// sidebar_item('profile', 'Profile', 'account_circle', $currentPage, $baseUrl);
 ?>
     </nav>
   </div>
 
-  <div class="flex flex-col gap-1">
-    <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10"
+  <!-- BOTTOM: profile & logout -->
+  <div class="flex flex-col gap-1 p-4 border-t border-[#234248] mt-auto">
+    <a class="flex items-center gap-3 px-1 py-2 rounded-lg hover:bg-white/10"
        href="<?php echo $baseUrl; ?>/index.php?page=profile">
-      <span class="material-symbols-outlined text-white">account_circle</span>
+      <span class="material-symbols-outlined text-white">person</span>
       <p class="text-white text-sm">Profile</p>
     </a>
-    <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10"
+    <a class="flex items-center gap-3 px-1 py-2 rounded-lg hover:bg-white/10"
        href="<?php echo $baseUrl; ?>/logout.php">
       <span class="material-symbols-outlined text-white">logout</span>
       <p class="text-white text-sm">Logout</p>

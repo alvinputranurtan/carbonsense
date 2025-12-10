@@ -114,7 +114,7 @@ if ($baseUrl === '/' || $baseUrl === '\\') {
 </head>
 
 <body class="bg-background-dark text-white font-display">
-  <div class="flex min-h-screen">
+  <div class="flex h-full">
     <?php include __DIR__.'/partials/sidebar.php'; ?>
 
     <main class="flex-1 p-8">
