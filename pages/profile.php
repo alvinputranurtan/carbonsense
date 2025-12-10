@@ -249,10 +249,10 @@ $officeAddress = $metaArr['office_address'] ?? '';
   </section>
 
   <!-- Ringkasan JSON (opsional, biar kelihatan kalau perlu debug) -->
-  <section class="rounded-xl border border-border bg-card/60 p-4 text-xs text-textmuted">
+  <!-- <section class="rounded-xl border border-border bg-card/60 p-4 text-xs text-textmuted">
     <p class="font-semibold text-white mb-2">Metadata JSON</p>
     <pre class="whitespace-pre-wrap break-words">
 <?php echo htmlspecialchars(json_encode($metaArr, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)); ?>
     </pre>
-  </section>
+  </section> -->
 </div>
