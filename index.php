@@ -114,10 +114,10 @@ if ($baseUrl === '/' || $baseUrl === '\\') {
 </head>
 
 <body class="bg-background-dark text-white font-display">
-  <div class="flex h-full">
+  <div class="flex h-screen bg-[#071417] overflow-hidden">
     <?php include __DIR__.'/partials/sidebar.php'; ?>
 
-    <main class="flex-1 p-8">
+    <main class="flex-1 md:ml-64 p-6 lg:p-8 overflow-y-auto">
       <?php
       // konten halaman (dashboard, analytics, dsb.)
       include $pagePath;
