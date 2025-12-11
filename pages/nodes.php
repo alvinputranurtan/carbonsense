@@ -291,20 +291,23 @@ $nodesJson = json_encode($nodes, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES
       const co  = node.co  != null ? node.co.toFixed(4) : '-';
 
       const popupHtml = `
-        <div class="text-xs">
-          <p class="font-semibold text-white mb-1">${node.name}</p>
-          <p class="text-[#9ca3af] mb-1">${node.location || ''}</p>
-          <p class="text-[#9ca3af] mb-1">Status:
-            <span style="color:${color}; font-weight:600;">${statusLabel}</span>
+        <div class="text-xs" style="color:#111827;">
+          <p class="font-semibold mb-1">${node.name}</p>
+          <p class="mb-1" style="color:#6b7280;">${node.location || ''}</p>
+          <p class="mb-1" style="color:#6b7280;">
+            Status:
+            <span style="color:${color}; font-weight:600;">
+              ${statusLabel}
+            </span>
           </p>
-          <p class="text-[#9ca3af]">AQI: <span class="text-white">${aqi}</span></p>
-          <p class="text-[#9ca3af]">GLI: <span class="text-white">${gli}</span></p>
-          <p class="text-[#9ca3af]">CO: <span class="text-white">${co}</span> ppm</p>
-          <p class="text-[#6b7280] mt-1">Last update: ${lastSeen}</p>
+          <p style="color:#4b5563;">AQI: <span style="font-weight:600;">${aqi}</span></p>
+          <p style="color:#4b5563;">GLI: <span style="font-weight:600;">${gli}</span></p>
+          <p style="color:#4b5563;">CO: <span style="font-weight:600;">${co}</span> ppm</p>
+          <p class="mt-1" style="color:#9ca3af;">Last update: ${lastSeen}</p>
         </div>
       `;
-      marker.bindPopup(popupHtml);
 
+      marker.bindPopup(popupHtml);
       markers.push(marker);
     });
 
@@ -314,3 +317,4 @@ $nodesJson = json_encode($nodes, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES
     }
   });
 </script>
+
